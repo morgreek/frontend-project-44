@@ -2,6 +2,8 @@
 
 import askName from '../src/cli.js';
 
+// Main code
 console.log('Welcome to the Brain Games!');
 
-askName();
+export const playerName = askName();
+console.log(`Hello, ${playerName}!`);
