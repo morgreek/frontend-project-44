@@ -15,18 +15,18 @@ export const createQuestion = () => {
 
   let correctAnswer = '';
   switch (operations[idxOper]) {
-  	case '+':
-  		correctAnswer = firstNum + secndNum;
-  		break;
-  	case '-':
-  		correctAnswer = firstNum - secndNum;
-  		break;
-  	case '*':
-  		correctAnswer = firstNum * secndNum;
-  		break;
-  	default:
-  		correctAnswer = 'Unknow operation '
-  		break;
+    case '+':
+      correctAnswer = firstNum + secndNum;
+      break;
+    case '-':
+      correctAnswer = firstNum - secndNum;
+      break;
+    case '*':
+      correctAnswer = firstNum * secndNum;
+      break;
+    default:
+      correctAnswer = 'Unknow operation ';
+      break;
   }
 
   return [`${firstNum} ${operations[idxOper]} ${secndNum}`, `${correctAnswer}`];

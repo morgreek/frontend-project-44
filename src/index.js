@@ -19,6 +19,7 @@ const showGameRules = (nameGame) => {
       break;
     case 'calc':
       getCalcRules();
+      break;
     default:
       return false;
   }
