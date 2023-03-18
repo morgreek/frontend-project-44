@@ -14,5 +14,5 @@ export const createQuestion = () => {
 };
 
 export const playEven = () => {
-	playGame('even');
+  playGame('even');
 };
