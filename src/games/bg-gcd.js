@@ -14,7 +14,8 @@ export const createQuestion = () => {
   const gcbArr = [a, b].sort().reverse();
 
   let correctAnswer = '';
-  while (true) {
+  let protect = 0;
+  while (protect < 1000000) {
     const [x, r] = gcbArr;
     if (r === 0) {
       correctAnswer += x;
@@ -23,6 +24,7 @@ export const createQuestion = () => {
     const temp = x % r;
     gcbArr[0] = r;
     gcbArr[1] = temp;
+    protect += 1;
   }
 
   return [`${a} ${b}`, `${correctAnswer}`];

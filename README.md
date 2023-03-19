@@ -5,6 +5,8 @@
 
 [Great Common Division](https://asciinema.org/a/Rx8clJz7KkqvymlywkBSVhYKF)
 
+[Progression](https://asciinema.org/a/MStGgmS81RRzzcJbE1J1yildX)
+
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/morgreek/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/morgreek/frontend-project-44/actions)
 
