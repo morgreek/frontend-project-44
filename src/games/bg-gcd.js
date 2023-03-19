@@ -1,0 +1,33 @@
+import { getRandomNumber, playGame } from '../index.js';
+
+export const getGameRules = () => {
+  console.log('Find the greatest common divisor of given numbers.');
+};
+
+export const createQuestion = () => {
+  const minRandom = 0;
+  const maxRandom = 50;
+
+  const a = getRandomNumber(minRandom, maxRandom);
+  const b = getRandomNumber(minRandom, maxRandom);
+
+  const gcbArr = [a, b].sort().reverse();
+
+  let correctAnswer = '';
+  while (true) {
+    const [x, r] = gcbArr;
+    if (r === 0) {
+      correctAnswer += x;
+      break;
+    }
+    const temp = x % r;
+    gcbArr[0] = r;
+    gcbArr[1] = temp;
+  }
+
+  return [`${a} ${b}`, `${correctAnswer}`];
+};
+
+export const playGcd = () => {
+  playGame('gcd');
+};

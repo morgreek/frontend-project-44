@@ -1,9 +1,9 @@
 ### Aciinemas
-#### Even and Odd
-[Aciinema Even and Odd](https://asciinema.org/a/uXr9vxPgqvyE3laPgxMEfRbHG)
+[Even and Odd](https://asciinema.org/a/uXr9vxPgqvyE3laPgxMEfRbHG)
 
-#### Calc
-[Aciinema Calc](https://asciinema.org/a/MMsqfZOZ3pEWgzkbUTD7vwRC8)
+[Calc](https://asciinema.org/a/MMsqfZOZ3pEWgzkbUTD7vwRC8)
+
+[Great Common Division](https://asciinema.org/a/Rx8clJz7KkqvymlywkBSVhYKF)
 
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/morgreek/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/morgreek/frontend-project-44/actions)

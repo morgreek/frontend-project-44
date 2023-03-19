@@ -1,6 +1,7 @@
 import asking from './cli.js';
 import { getGameRules as getEvenRules, createQuestion as questEven } from './games/bg-even.js';
 import { getGameRules as getCalcRules, createQuestion as questCalc } from './games/bg-calc.js';
+import { getGameRules as getGcdRules, createQuestion as questGcd } from './games/bg-gcd.js';
 
 export const prepareGame = () => {
   console.log('Welcome to the Brain Games!');
@@ -20,6 +21,9 @@ const showGameRules = (nameGame) => {
     case 'calc':
       getCalcRules();
       break;
+    case 'gcd':
+      getGcdRules();
+      break;
     default:
       return false;
   }
@@ -33,6 +37,8 @@ export const getQuestionByGame = (nameGame) => {
       return questEven();
     case 'calc':
       return questCalc();
+    case 'gcd':
+      return questGcd();
     default:
       return false;
   }
