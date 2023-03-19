@@ -1,5 +1,9 @@
-### Aciinema Even and Odd
+### Aciinemas
+#### Even and Odd
 [Aciinema Even and Odd](https://asciinema.org/a/uXr9vxPgqvyE3laPgxMEfRbHG)
+
+#### Calc
+[Aciinema Calc](https://asciinema.org/a/MMsqfZOZ3pEWgzkbUTD7vwRC8)
 
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/morgreek/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/morgreek/frontend-project-44/actions)
