@@ -1,10 +1,11 @@
-import { getRandomNumber, playGame } from '../index.js';
+import { playGame } from '../index.js';
+import { getRandomNumber } from '../utils.js';
 
-export const getGameRules = () => {
+const getGameRules = () => {
   console.log('What number is missing in the progression?');
 };
 
-export const createQuestion = () => {
+const createQuestion = () => {
   const minLen = 5;
   const maxLen = 10;
   const progLen = getRandomNumber(minLen, maxLen);
@@ -28,5 +29,5 @@ export const createQuestion = () => {
 };
 
 export const playProgression = () => {
-  playGame('prgs');
+  playGame('What number is missing in the progression?', createQuestion);
 };

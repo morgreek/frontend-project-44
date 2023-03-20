@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-import { prepareGame, getPlayerName } from '../src/index.js';
+import { playGame } from '../src/index.js';
 
-prepareGame();
-getPlayerName();
+playGame();

@@ -1,59 +1,9 @@
 import asking from './cli.js';
-import { getGameRules as getEvenRules, createQuestion as questEven } from './games/bg-even.js';
-import { getGameRules as getCalcRules, createQuestion as questCalc } from './games/bg-calc.js';
-import { getGameRules as getGcdRules, createQuestion as questGcd } from './games/bg-gcd.js';
-import { getGameRules as getPrgsRules, createQuestion as questPrgs } from './games/bg-progress.js';
-import { getGameRules as getPrimeRules, createQuestion as questPrime } from './games/bg-prime.js';
 
-export const prepareGame = () => {
-  console.log('Welcome to the Brain Games!');
-};
-
-export const getPlayerName = () => {
+const askPlayerName = () => {
   const playerName = asking('May I have your name? ');
   console.log(`Hello, ${playerName}!`);
   return playerName;
-};
-
-const showGameRules = (nameGame) => {
-  switch (nameGame) {
-    case 'even':
-      getEvenRules();
-      break;
-    case 'calc':
-      getCalcRules();
-      break;
-    case 'gcd':
-      getGcdRules();
-      break;
-    case 'prgs':
-      getPrgsRules();
-      break;
-    case 'prime':
-      getPrimeRules();
-      break;
-    default:
-      return false;
-  }
-
-  return true;
-};
-
-export const getQuestionByGame = (nameGame) => {
-  switch (nameGame) {
-    case 'even':
-      return questEven();
-    case 'calc':
-      return questCalc();
-    case 'gcd':
-      return questGcd();
-    case 'prgs':
-      return questPrgs();
-    case 'prime':
-      return questPrime();
-    default:
-      return false;
-  }
 };
 
 const askQuestion = (question, correctAnswer) => {
@@ -67,25 +17,25 @@ const askQuestion = (question, correctAnswer) => {
   return false;
 };
 
-const askThreeTimes = (nameGame) => {
+const askThreeTimes = (generateRoundData) => {
   const count = 3;
   for (let i = 0; i < count; i += 1) {
-    const quest = getQuestionByGame(nameGame);
-    const answr = askQuestion(quest[0], quest[1]);
-    if (!answr) return false;
+    const [quest, answr] = generateRoundData();
+    const isCorrect = askQuestion(quest, answr);
+    if (!isCorrect) return false;
   }
 
   return true;
 };
 
-export const playGame = (nameGame) => {
-  prepareGame();
+export const playGame = (description, generateRoundData) => {
+  console.log('Welcome to the Brain Games!');
+  const playerName = askPlayerName();
 
-  const playerName = getPlayerName();
+  if (generateRoundData === undefined) return null;
 
-  showGameRules(nameGame);
-
-  const gameResult = askThreeTimes(nameGame);
+  console.log(description);
+  const gameResult = askThreeTimes(generateRoundData);
 
   if (gameResult) {
     console.log(`Congratulations, ${playerName}!`);
@@ -93,5 +43,3 @@ export const playGame = (nameGame) => {
     console.log(`Let's try again, ${playerName}!`);
   }
 };
-
-export const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);

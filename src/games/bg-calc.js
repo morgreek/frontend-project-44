@@ -1,10 +1,7 @@
-import { getRandomNumber, playGame } from '../index.js';
+import { playGame } from '../index.js';
+import { getRandomNumber } from '../utils.js';
 
-export const getGameRules = () => {
-  console.log('What is the result of the expression?');
-};
-
-export const createQuestion = () => {
+const createQuestion = () => {
   const minRandom = 1;
   const maxRandom = 50;
   const operations = ['+', '-', '*'];
@@ -33,5 +30,5 @@ export const createQuestion = () => {
 };
 
 export const playCalc = () => {
-  playGame('calc');
+  playGame('What is the result of the expression?', createQuestion);
 };
