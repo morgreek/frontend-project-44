@@ -28,7 +28,7 @@ const askThreeTimes = (generateRoundData) => {
   return true;
 };
 
-export const playGame = (description, generateRoundData) => {
+const playGame = (description, generateRoundData) => {
   console.log('Welcome to the Brain Games!');
   const playerName = askPlayerName();
 
@@ -42,4 +42,8 @@ export const playGame = (description, generateRoundData) => {
   } else {
     console.log(`Let's try again, ${playerName}!`);
   }
+
+  return gameResult;
 };
+
+export default playGame;

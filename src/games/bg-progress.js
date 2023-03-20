@@ -1,9 +1,5 @@
-import { playGame } from '../index.js';
+import playGame from '../index.js';
 import { getRandomNumber } from '../utils.js';
-
-const getGameRules = () => {
-  console.log('What number is missing in the progression?');
-};
 
 const createQuestion = () => {
   const minLen = 5;
@@ -28,6 +24,8 @@ const createQuestion = () => {
   return [sequence.join(' '), correctAnswer];
 };
 
-export const playProgression = () => {
+const playProgression = () => {
   playGame('What number is missing in the progression?', createQuestion);
 };
+
+export default playProgression;

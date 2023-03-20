@@ -1,4 +1,4 @@
-import { playGame } from '../index.js';
+import playGame from '../index.js';
 import { getRandomNumber } from '../utils.js';
 
 const createQuestion = () => {
@@ -10,6 +10,8 @@ const createQuestion = () => {
   return [newNum, correctAnswer];
 };
 
-export const playEven = () => {
+const playEven = () => {
   playGame('Answer "yes" if the number is even, otherwise answer "no".', createQuestion);
 };
+
+export default playEven;
