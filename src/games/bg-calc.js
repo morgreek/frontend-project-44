@@ -1,6 +1,25 @@
 import playGame from '../index.js';
 import getRandomNumber from '../utils.js';
 
+const calc = (a, b, operator) => {
+  let calcResult = '';
+  switch (operator) {
+    case '+':
+      calcResult = a + b;
+      break;
+    case '-':
+      calcResult = a - b;
+      break;
+    case '*':
+      calcResult = a * b;
+      break;
+    default:
+      throw Error('Unknow operator');
+  }
+
+  return calcResult;
+};
+
 const createQuestion = () => {
   const minRandom = 1;
   const maxRandom = 50;
@@ -8,25 +27,11 @@ const createQuestion = () => {
 
   const firstNum = getRandomNumber(minRandom, maxRandom);
   const secndNum = getRandomNumber(minRandom, maxRandom);
-  const idxOper = getRandomNumber(0, operations.length - 1);
+  const operatorIndex = getRandomNumber(0, operations.length - 1);
 
-  let correctAnswer = '';
-  switch (operations[idxOper]) {
-    case '+':
-      correctAnswer = firstNum + secndNum;
-      break;
-    case '-':
-      correctAnswer = firstNum - secndNum;
-      break;
-    case '*':
-      correctAnswer = firstNum * secndNum;
-      break;
-    default:
-      correctAnswer = 'Unknow operation ';
-      break;
-  }
+  const correctAnswer = calc(firstNum, secndNum, operations[operatorIndex]);
 
-  return [`${firstNum} ${operations[idxOper]} ${secndNum}`, `${correctAnswer}`];
+  return [`${firstNum} ${operations[operatorIndex]} ${secndNum}`, `${correctAnswer}`];
 };
 
 const playCalc = () => {

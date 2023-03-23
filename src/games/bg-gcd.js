@@ -1,21 +1,15 @@
 import playGame from '../index.js';
 import getRandomNumber from '../utils.js';
 
-const createQuestion = () => {
-  const minRandom = 0;
-  const maxRandom = 50;
-
-  const a = getRandomNumber(minRandom, maxRandom);
-  const b = getRandomNumber(minRandom, maxRandom);
+const gcd = (a, b) => {
+  let result = '';
 
   const gcbArr = [a, b].sort().reverse();
-
-  let correctAnswer = '';
   let protect = 0;
   while (protect < 1000000) {
     const [x, r] = gcbArr;
     if (r === 0) {
-      correctAnswer += x;
+      result += x;
       break;
     }
     const temp = x % r;
@@ -23,6 +17,18 @@ const createQuestion = () => {
     gcbArr[1] = temp;
     protect += 1;
   }
+
+  return result;
+};
+
+const createQuestion = () => {
+  const minRandom = 0;
+  const maxRandom = 50;
+
+  const a = getRandomNumber(minRandom, maxRandom);
+  const b = getRandomNumber(minRandom, maxRandom);
+
+  const correctAnswer = gcd(a, b);
 
   return [`${a} ${b}`, `${correctAnswer}`];
 };
