@@ -2,7 +2,7 @@
   "name": "@hexlet/code",
   "version": "1.0.0",
   "type": "module",
-  "description": "brain-game",
+  "description": "'brain-games' is a set of five console math mini-games, such as calculating two numbers, even-odd, prime-or-not prime, missing member of arithmetic progression",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

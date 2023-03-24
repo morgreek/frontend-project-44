@@ -1,11 +1,11 @@
 import playGame from '../index.js';
 import getRandomNumber from '../utils.js';
 
-const arithProgression = (init, step, len) => {
+const getProgression = (firstElement, step, length) => {
   const sequence = [];
 
-  for (let i = 0; i < len; i += 1) {
-    const a = init + i * step;
+  for (let i = 0; i < length; i += 1) {
+    const a = firstElement + i * step;
     sequence.push(a);
   }
 
@@ -17,13 +17,13 @@ const createQuestion = () => {
   const maxLen = 10;
   const startNum = getRandomNumber(0, 20);
   const step = getRandomNumber(1, 15);
-  const progLen = getRandomNumber(minLen, maxLen);
-  const idHide = getRandomNumber(0, progLen - 1);
+  const progressionLength = getRandomNumber(minLen, maxLen);
+  const index = getRandomNumber(0, progressionLength - 1);
 
-  const sequence = arithProgression(startNum, step, progLen);
+  const sequence = getProgression(startNum, step, progressionLength);
 
-  const correctAnswer = sequence[idHide];
-  sequence[idHide] = '..';
+  const correctAnswer = sequence[index];
+  sequence[index] = '..';
 
   return [sequence.join(' '), `${correctAnswer}`];
 };

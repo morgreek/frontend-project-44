@@ -6,18 +6,16 @@ const calc = (a, b, operator) => {
   switch (operator) {
     case '+':
       calcResult = a + b;
-      break;
+      return calcResult;
     case '-':
       calcResult = a - b;
-      break;
+      return calcResult;
     case '*':
       calcResult = a * b;
-      break;
+      return calcResult;
     default:
       throw Error('Unknow operator');
   }
-
-  return calcResult;
 };
 
 const createQuestion = () => {

@@ -20,10 +20,10 @@ const createQuestion = () => {
   const minRand = 1;
   const maxRand = 271;
 
-  const randNumb = getRandomNumber(minRand, maxRand);
-  const correctAnswer = isPrime(randNumb) ? 'yes' : 'no';
+  const value = getRandomNumber(minRand, maxRand);
+  const correctAnswer = isPrime(value) ? 'yes' : 'no';
 
-  return [randNumb, correctAnswer];
+  return [value, correctAnswer];
 };
 
 const playPrime = () => {
