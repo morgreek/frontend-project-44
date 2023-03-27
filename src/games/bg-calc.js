@@ -2,17 +2,13 @@ import playGame from '../index.js';
 import getRandomNumber from '../utils.js';
 
 const calc = (a, b, operator) => {
-  let calcResult = '';
   switch (operator) {
     case '+':
-      calcResult = a + b;
-      return calcResult;
+      return a + b;
     case '-':
-      calcResult = a - b;
-      return calcResult;
+      return a - b;
     case '*':
-      calcResult = a * b;
-      return calcResult;
+      return a * b;
     default:
       throw Error('Unknow operator');
   }
