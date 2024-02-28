@@ -5,7 +5,7 @@
 
 ## Info
 
-Few mini amthematical games in the question-and-answer genre.
+Few mini math games in the question-and-answer genre.
 
 **Includes:**
 
